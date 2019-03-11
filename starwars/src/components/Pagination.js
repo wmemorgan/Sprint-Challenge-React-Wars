@@ -1,7 +1,6 @@
 import React from 'react'
 
 const Pagination = props => {
-  console.log(`Pagination props: `, props)
   const { totalRecords, pageLimit, partialURL,
     nextPage, getCharacters } = props
   const currentPage = number => partialURL + number 
@@ -10,7 +9,6 @@ const Pagination = props => {
   for (let i = 1; i <= Math.ceil(totalRecords / pageLimit); i++) {
     pageNumbers.push(i);
   }
-  console.log(pageNumbers)
 
   return (
     <div className="pagination-container">
@@ -41,7 +39,10 @@ const Pagination = props => {
       >
         Next
       </div>
-      <div className="page-number">
+      <div
+        className="page-number"
+        onClick={() => getCharacters('https://swapi.co/api/people/?page=9')}
+      >
         Last
       </div>      
     </div>

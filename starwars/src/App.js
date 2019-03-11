@@ -29,11 +29,10 @@ class App extends Component {
         return res.json();
       })
       .then(data => {
-        console.log(data.next.slice(0,-1))
         this.setState({
           starwarsChars: data.results,
           totalRecords: data.count,
-          pageLimit: data.results.length,
+          pageLimit: 10,
           nextPage: data.next ? data.next : '',
           previousPage: data.previous ? data.previous : ''
         });
@@ -42,8 +41,6 @@ class App extends Component {
         throw new Error(err);
       });
   };
-
-  
 
   render() {
     const { starwarsChars, totalRecords, pageLimit, nextPage, previousPage } = this.state

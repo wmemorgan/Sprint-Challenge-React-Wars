@@ -26,7 +26,6 @@ const Pagination = props => {
         Previous
       </div>
       {pageNumbers.map(number => {
-        console.log(`number is: ${number}`)
         let pageNumberClassGroup = classNames({
           "page-number": true,
           active: currentPage === number

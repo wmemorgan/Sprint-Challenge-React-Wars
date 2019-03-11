@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Poller+One');
+
 .App {
   width: 90%;
   max-width: 1000px;
@@ -9,10 +11,13 @@
 }
 
 .Header {
+  font-family: 'Poller One', Helvetica, Sans-Serif;
   font-size: 2.5rem;
   font-weight: bold;
+  font-style: italic;
   color: #443e3e;
-  text-shadow: 1px 1px 5px #fff;
+  text-shadow: 1px 1px 5px goldenrod;
+  text-transform: uppercase;
 }
 
 /* Mobile View Settings */

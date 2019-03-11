@@ -15,7 +15,7 @@ const Pagination = props => {
     <div className="pagination-container">
       <div 
         className="page-number"
-        onClick={() => getCharacters('https://swapi.co/api/people/')}
+        onClick={() => getCharacters(goToPage(1), 1)}
       >
         First
       </div>
@@ -26,6 +26,7 @@ const Pagination = props => {
         Previous
       </div>
       {pageNumbers.map(number => {
+        console.log(`number is: ${number}`)
         let pageNumberClassGroup = classNames({
           "page-number": true,
           active: currentPage === number
@@ -47,7 +48,7 @@ const Pagination = props => {
       </div>
       <div
         className="page-number"
-        onClick={() => getCharacters('https://swapi.co/api/people/?page=9')}
+        onClick={() => getCharacters(goToPage(pageNumbers.length), pageNumbers.length)}
       >
         Last
       </div>      

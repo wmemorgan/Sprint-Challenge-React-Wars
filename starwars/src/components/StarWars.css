@@ -56,3 +56,39 @@
   }
  
 }
+
+.pagination-container {
+  width: 90%;
+  max-width: 800px;
+  display: flex;
+  justify-content: space-evenly;
+  margin: 20px 0;
+  background: black;
+}
+
+
+
+.page-number {
+  width: 100%;
+  padding: 10px 5px;
+  text-align: center;
+  color: goldenrod;
+  font-size: .75rem;
+  border: 1px solid goldenrod;
+  cursor: pointer;
+}
+
+.page-number:hover {
+  color: black;
+  background: goldenrod;
+}
+
+@media (max-width: 600px) {
+  .pagination-container {
+    width: 100%;
+  }
+
+  /* .page-number {
+    padding: 10px;
+  } */
+}

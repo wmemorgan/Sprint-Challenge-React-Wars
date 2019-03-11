@@ -78,7 +78,7 @@
   cursor: pointer;
 }
 
-.page-number:hover {
+.page-number:hover, .active {
   color: black;
   background: goldenrod;
 }

@@ -1,9 +1,10 @@
 import React from 'react'
+import classNames from 'classnames'
 
 const Pagination = props => {
-  const { totalRecords, pageLimit, partialURL,
+  const { totalRecords, pageLimit, partialURL, currentPage,
     nextPage, getCharacters } = props
-  const currentPage = number => partialURL + number 
+  const goToPage = number => partialURL + number 
   const previousPage = props.previousPage ? props.previousPage : 'https://swapi.co/api/people/?page=1'
   const pageNumbers = [];
   for (let i = 1; i <= Math.ceil(totalRecords / pageLimit); i++) {
@@ -20,19 +21,24 @@ const Pagination = props => {
       </div>
       <div 
         className="page-number"
-        onClick={() => getCharacters(previousPage)}
+        onClick={() => getCharacters(previousPage, currentPage - 1)}
       >
         Previous
       </div>
-      {pageNumbers.map(number => (
+      {pageNumbers.map(number => {
+        let pageNumberClassGroup = classNames({
+          "page-number": true,
+          active: currentPage === number
+        });
+      return (
         <div 
-          className="page-number" 
+          className={pageNumberClassGroup} 
           key={number} 
-          onClick={() => getCharacters(currentPage(number))}
+          onClick={() => getCharacters(goToPage(number), number)}
         >
           {number}
         </div>
-      ))}
+      )})}
       <div 
         className="page-number"
         onClick={() => getCharacters(nextPage)}

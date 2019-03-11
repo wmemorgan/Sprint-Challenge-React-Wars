@@ -44,7 +44,7 @@ class App extends Component {
 
   render() {
     const { starwarsChars, totalRecords, pageLimit, nextPage, previousPage } = this.state
-    const partialURL = nextPage ? nextPage.slice(0,-1) : ''
+    const partialURL = nextPage ? nextPage.slice(0, -1) : 'https://swapi.co/api/people/?page='
     return (
       <div className="App">
         <h1 className="Header">React Wars</h1>

@@ -33,6 +33,7 @@ class App extends Component {
         this.setState({
           starwarsChars: data.results,
           totalRecords: data.count,
+          pageLimit: data.results.length,
           nextPage: data.next ? data.next : '',
           previousPage: data.previous ? data.previous : ''
         });
@@ -46,6 +47,7 @@ class App extends Component {
 
   render() {
     const { starwarsChars, totalRecords, pageLimit, nextPage, previousPage } = this.state
+    const partialURL = nextPage ? nextPage.slice(0,-1) : ''
     return (
       <div className="App">
         <h1 className="Header">React Wars</h1>
@@ -53,6 +55,7 @@ class App extends Component {
         <Pagination
           totalRecords={totalRecords}
           pageLimit={pageLimit}
+          partialURL={partialURL}
           nextPage={nextPage}
           previousPage={previousPage} 
           getCharacters={this.getCharacters}

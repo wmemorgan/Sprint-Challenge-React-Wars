@@ -2,12 +2,12 @@ import React from 'react'
 
 const Pagination = props => {
   console.log(`Pagination props: `, props)
-  const { totalRecords, pageLimit,
+  const { totalRecords, pageLimit, partialURL,
     nextPage, getCharacters } = props
-  const currentPage = number => nextPage ? nextPage.slice(0,-1) + number : '' 
+  const currentPage = number => partialURL + number 
   const previousPage = props.previousPage ? props.previousPage : 'https://swapi.co/api/people/?page=1'
   const pageNumbers = [];
-  for (let i = 1; i < Math.ceil(totalRecords / pageLimit); i++) {
+  for (let i = 1; i <= Math.ceil(totalRecords / pageLimit); i++) {
     pageNumbers.push(i);
   }
   console.log(pageNumbers)

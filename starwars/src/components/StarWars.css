@@ -1,0 +1,24 @@
+.character-list {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  border: 1px solid black;
+}
+
+@media (max-width: 600px) {
+  .character-list {
+    flex-direction: column;
+  }
+}
+
+.character-info {
+  flex: 0 0 48%;
+}
+
+@media (max-width: 600px) {
+  .character-info {
+    flex: 0 0 100%;
+  }
+ 
+}

@@ -1,8 +1,10 @@
+/* Display character informaiton */
 import React from 'react'
 import './StarWars.css'
 
 const Character = props => {
   const { name, gender, birth_year, height, mass, eye_color, hair_color } = props.character
+  
   return (
     <div className="character-info">
       <h3 className="header-character">{name}</h3>

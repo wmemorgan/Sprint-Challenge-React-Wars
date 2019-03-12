@@ -1,3 +1,4 @@
+/* Pass API data to Character component */
 import React from 'react'
 import './StarWars.css'
 

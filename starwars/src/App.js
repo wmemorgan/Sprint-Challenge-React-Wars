@@ -16,8 +16,8 @@ class App extends Component {
     this.getCharacters('https://swapi.co/api/people/');
   }
 
+  // Download API data into state
   getCharacters = (URL, currentPage=1) => {
-    // feel free to research what this code is doing.
     // At a high level we are calling an API to fetch some starwars data from the open web.
     // We then take that data and resolve it our state.
     fetch(URL)
@@ -41,7 +41,9 @@ class App extends Component {
 
   render() {
     const { starwarsChars, totalRecords, pageLimit, currentPage, nextPage, previousPage } = this.state
+    // Obtain base API call without the page number
     const partialURL = nextPage ? nextPage.slice(0, -1) : 'https://swapi.co/api/people/?page='
+    
     return (
       <div className="App">
         <h1 className="Header">React Wars</h1>

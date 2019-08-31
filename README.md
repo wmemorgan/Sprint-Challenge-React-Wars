@@ -26,11 +26,21 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 - [ ] What is React JS and what problems does it try and solve? Support your answer with concepts introduced in class and from your personal research on the web.
 
+  _React.JS is a UI library whose main purpose is to quickly develop large scale applications. It does this by using a Virtual DOM layer to simplify building UI components while still leveraging the a lot of the Javascript language._
+
+
 - [ ] What does it mean to _think_ in react?
+
+  _To think in React means that when you're building an application you break into into small components that ideally should only do one thing._
+
 
 - [ ] Describe state.
 
+  _State is the data in a React application._
+
 - [ ] Describe props.
+
+_Props (short for properties) is a method in which we pass/share data among different components._
 
 ## Project Set Up
 
